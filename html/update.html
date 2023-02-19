@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="update.css">
+    <link rel="stylesheet" href="header.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+          <h2>
+            Админ панель
+          </h2>
+      </div>
+      <div class="menu">
+          <div>
+              <a href="" class="link">
+                  <span class="item">
+                      Задачи
+                  </span>
+              </a>
+              <a href="" class="link">
+                  <span class="item">
+                      Режимы
+                  </span>
+              </a>
+          </div>
+      </div>
+  </header>  
+    <div class="divide">
+    <h1>Задачи</h1>
+    <ul class="tasks">
+      <!-- Для каждой задачи в списке -->
+      <li>
+        <form>
+          <input type="hidden" name="id" value="1">
+          <h2><input type="text" name="title" value="Задача #1"></h2>
+          <p><textarea name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea></p>
+          <p><input type="text" name="tags" value="Tag1, Tag2, Tag3"></p>
+          <button type="submit" onclick="updateTask(event)">Обновить</button>
+          <button type="button" onclick="deleteTask(1)">Удалить</button>
+        </form>
+      </li>
+      <li>
+        <form>
+          <input type="hidden" name="id" value="2">
+          <h2><input type="text" name="title" value="Задача #2"></h2>
+          <p><textarea name="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</textarea></p>
+          <p><input type="text" name="tags" value="Tag2, Tag4, Tag8"></p>
+          <button type="submit" onclick="updateTask(event)">Обновить</button>
+          <button type="button" onclick="deleteTask(2)">Удалить</button>
+        </form>
+      </li>
+      <!-- остальные задачи -->
+    </ul>
+
+    <h1>Режимы</h1>
+    <ul class="modes">
+      <!-- Для каждого режима в списке -->
+      <li>
+        <form>
+          <input type="hidden" name="id" value="1">
+          <h2><input type="text" name="title" value="Режим 1"></h2>
+          <p><input type="text" name="tags" value="Tag1, Tag9"></p>
+          <button type="submit" onclick="updateMode(event)">Обновить</button>
+          <button type="button" onclick="deleteMode(1)">Удалить</button>
+        </form>
+      </li>
+      <li>
+        <form>
+          <input type="hidden" name="id" value="2">
+          <h2><input type="text" name="title" value="Режим 2"></h2>
+          <p><input type="text" name="tags" value="Tag2, Tag3"></p>
+          <button type="submit" onclick="updateMode(event)">Обновить</button>
+          <button type="button" onclick="deleteMode(2)">Удалить</button>
+        </form>
+      </li>
+      <!-- остальные режимы -->
+    </ul>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

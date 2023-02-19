@@ -1,0 +1,46 @@
+{
+    "tasks": {
+        "0": {
+            "text": "Text text text text",
+            "tags": [
+                "Tag1",
+                "Tag2",
+                "Tag3"
+            ]
+        },
+        "1": {
+            "text": "Text texxxt",
+            "tags": [
+                "Tag2"
+            ]
+        }
+    },
+    "modes": {
+        "Mode3": {
+            "tags": [
+                "Tag4",
+                "Tag1",
+                "Tag3"
+            ]
+        },
+        "Mode4": {
+            "tags": [
+                "Tag8",
+                "Tag1"
+            ]
+        },
+        "Mode2": {
+            "tags": [
+                "Tag2",
+                "Tag3"
+            ]
+        },
+        "Mode1": {
+            "tags": [
+                "Tag1",
+                "Tag7",
+                "Tag2"
+            ]
+        }
+    }
+}

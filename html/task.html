@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+  </head>
+  <body>
+    <header class="header">
+        <div class="logo">
+            <h2>
+              Админ панель
+            </h2>
+        </div>
+        <div class="menu">
+            <div>
+                <a href="" class="link">
+                    <span class="item">
+                        Задачи
+                    </span>
+                </a>
+                <a href="" class="link">
+                    <span class="item">
+                        Режимы
+                    </span>
+                </a>
+            </div>
+        </div>
+    </header>      
+    <div class="divide">
+        <h1>Задачи</h1>
+        <ul>
+            <!-- Для каждой задачи в списке -->
+            <li>
+              <h2>Задача #1</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Теги: Tag1, Tag2, Tag3</p>
+              <button onclick="editTask(1)">Редактировать</button>
+              <button onclick="deleteTask(1)">Удалить</button>
+            </li>
+            <li>
+              <h2>Задача #2</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Теги: Tag2, Tag4, Tag8</p>
+              <button onclick="editTask(2)">Редактировать</button>
+              <button onclick="deleteTask(2)">Удалить</button>
+            </li>
+            <li>
+              <h2>Задача #3</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Теги: Tag1, Tag5, Tag7</p>
+              <button onclick="editTask(3)">Редактировать</button>
+              <button onclick="deleteTask(3)">Удалить</button>
+            </li>
+            <li>
+              <h2>Задача #4</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+              <p>Теги: Tag9, Tag4, Tag2</p>
+              <button onclick="editTask(4)">Редактировать</button>
+              <button onclick="deleteTask(4)">Удалить</button>
+            </li>
+          </ul>
+      
+      
+          <script>
+              function deleteTask(taskId) {
+                  fetch('/api/tasks/' + taskId, {
+                    method: 'DELETE',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    }
+                  })
+                  .then(response => {
+                    // обработка ответа от сервера
+                  })
+                  .catch(error => {
+                    console.error('Ошибка при удалении задачи:', error);
+                  });
+                }
+                
+                function deleteMode(modeId) {
+                  fetch('/api/modes/' + modeId, {
+                    method: 'DELETE',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    }
+                  })
+                  .then(response => {
+                    // обработка ответа от сервера
+                  })
+                  .catch(error => {
+                    console.error('Ошибка при удалении режима:', error);
+                  });
+                }
+          </script>
+    </div>
+    </body>
+</html>

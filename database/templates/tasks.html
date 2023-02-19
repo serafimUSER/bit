@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+  </head>
+  <body>
+    <header class="header">
+        <div class="logo">
+            <h2>
+              Админ панель
+            </h2>
+        </div>
+        <div class="menu">
+            <div>
+                <a href="/tasks" class="link">
+                    <span class="item">
+                        Задачи
+                    </span>
+                </a>
+                <a href="/modes" class="link">
+                    <span class="item">
+                        Режимы
+                    </span>
+                </a>
+            </div>
+        </div>
+    </header>      
+    <div class="divide">
+        <h1>Задачи</h1>
+        <ul>
+            {% if tasks %}
+              {% for task in tasks %}
+                <li>
+                  <h2>Задача #{{task|int+1}}</h2>
+                  <p>{{tasks[task]["text"]}}</p>
+                  <p>Теги: {% for tag in tasks[task]["tags"] %} {{tag}}, {% endfor %}</p>
+                  <button onclick="document.location.href = '/update/task/{{task}}'">Редактировать</button>
+                  <button onclick="deleteTask('{{task|int}}')">Удалить</button>
+                </li>
+              {% endfor %}
+            {% else %}
+                <p style="font-size: 20px; text-align:left; margin-left:40px;">Пока задач нету</p>
+            {% endif %}
+          </ul>
+          <button class="create-btn" onclick="document.location.href = '/create/task/'">Создать</button>
+      
+      
+          <script>
+              function deleteTask(taskId) {
+                  fetch('/api/tasks/' + taskId, {
+                    method: 'DELETE',
+                    headers: {
+                      'Content-Type': 'application/json'
+                    }
+                  })
+                  .then(response => {
+                    // обработка ответа от сервера
+                  })
+                  .catch(error => {
+                    console.error('Ошибка при удалении задачи:', error);
+                  });
+                  setTimeout(function () {
+                    document.location.href = '/tasks';
+                  }, 200)
+                }
+          </script>
+    </div>
+    </body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+    <style>
+      body {
+        background-color: #f5f5f5;
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      
+      .container {
+        width: 400px;
+        margin: 0 auto;
+        margin-top: 100px;
+      }
+
+      .inputs{
+        margin-top: 30px;
+      }
+      
+      h1 {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 50px;
+        color: #333;
+      }
+      
+      form {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        height: 250px;
+      }
+      
+      input[type="text"], input[type="password"] {
+        border: none;
+        border-bottom: 1px solid #d9d9d9;
+        margin-bottom: 20px;
+        padding: 10px;
+        width: 90%;
+        font-size: 16px;
+        color: #333;
+        outline: none;
+        transition: .2s;
+        border-radius: 0;
+      }
+      input[type="text"]:focus, 
+      input[type="password"]:focus{
+        border-color: #007aff;
+      }
+      
+      input[type="submit"] {
+        background-color: #007aff;
+        border: none;
+        border-radius: 25px;
+        color: #fff;
+        cursor: pointer;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 10px 20px;
+        margin-top: 20px;
+        transition: background-color 0.3s ease;
+        width: 100%;
+      }
+      
+      input[type="submit"]:hover {
+        background-color: #0052cc;
+      }
+
+      .registr{
+        text-align: center;
+        margin-top: 15px;
+        color: #007aff;
+      }
+      
+      img {
+        width: 18px;
+        color: #d9d9d9;
+        margin-right: 10px;
+      }
+      
+      .email-icon {
+        margin-top: 13px;
+      }
+      
+      .password-icon {
+        margin-top: 11px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Вход</h1>
+      <form method="post">
+        <div class="inputs">
+          <div>
+            <input type="text" name="username" placeholder="Username">
+          </div>
+          <div>
+            <input type="password" name="password" placeholder="Password">
+          </div>
+        </div>
+        <input type="submit" value="Войти">
+        <div class="registr">
+          <a href="/registr">
+            Регистрация
+          </a>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
+

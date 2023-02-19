@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+          <h2>
+            Админ панель
+          </h2>
+      </div>
+      <div class="menu">
+          <div>
+              <a href="/tasks" class="link">
+                  <span class="item">
+                      Задачи
+                  </span>
+              </a>
+              <a href="" class="link">
+                  <span class="item">
+                      Режимы
+                  </span>
+              </a>
+          </div>
+      </div>
+  </header>  
+      
+        <div class="divide">
+            <h1>Режимы</h1>
+                <ul id="lo">
+                    {% if modes %}
+                        {% for mode in modes %}
+                            <li>
+                                <h2>{{mode}}</h2>
+                                <p>Теги: {% for mode in modes[mode]["tags"] %}{{mode}}, {% endfor %}</p>
+                                <button onclick="document.location.href = '/update/mode/{{mode}}'">Редактировать</button>
+                                <button onclick="deleteMode('{{mode}}')">Удалить</button>
+                            </li>
+                        {% endfor %}
+                    {% else %}
+                        <p style="font-size: 20px; text-align:left; margin-left:40px;">Пока режимов нету</p>
+                    {% endif %}
+                </ul>
+                <button class="create-btn" onclick="document.location.href = '/create/mode/'">Создать</button>
+        </div>
+        <script>
+            function deleteMode(modeId) {
+                fetch('/api/modes/' + modeId, {
+                  method: 'DELETE',
+                  headers: {
+                    'Content-Type': 'application/json'
+                  }
+                })
+                .then(response => {
+                  // обработка ответа от сервера
+                })
+                .catch(error => {
+                  console.error('Ошибка при удалении режима:', error);
+                });
+                setTimeout(function () {
+                    document.location.href = '/modes';
+                }, 200)
+            }
+        </script>
+    </body>
+</html>

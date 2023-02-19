@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="header.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+          <h2>
+            Админ панель
+          </h2>
+      </div>
+      <div class="menu">
+          <div>
+              <a href="" class="link">
+                  <span class="item">
+                      Задачи
+                  </span>
+              </a>
+              <a href="" class="link">
+                  <span class="item">
+                      Режимы
+                  </span>
+              </a>
+          </div>
+      </div>
+  </header>  
+      
+    <div class="divide">
+        <h1>Режимы</h1>
+        <ul id="lo">
+        <!-- Для каждого режима в списке -->
+        <li>
+            <h2>Режим 1</h2>
+            <p>Теги: Tag1, Tag9</p>
+            <button onclick="editMode(1)">Редактировать</button>
+            <button onclick="deleteMode(1)">Удалить</button>
+        </li>
+        <li>
+            <h2>Режим 2</h2>
+            <p>Теги: Tag2, Tag3</p>
+            <button onclick="editMode(2)">Редактировать</button>
+            <button onclick="deleteMode(2)">Удалить</button>
+        </li>
+        <li>
+            <h2>Режим 3</h2>
+            <p>Теги: Tag4, Tag2</p>
+            <button onclick="editMode(3)">Редактировать</button>
+            <button onclick="deleteMode(3)">Удалить</button>
+        </li>
+        <li>
+            <h2>Режим 4</h2>
+            <p>Теги: Tag8, Tag1</p>
+            <button onclick="editMode(4)">Редактировать</button>
+            <button onclick="deleteMode(4)">Удалить</button>
+        </li>
+        </ul>
+    </div>
+    </body>
+</html>

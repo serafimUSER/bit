@@ -1,0 +1,15 @@
+Tabel Name `Tasks`
+id | text | tags -> Tags
+
+Tabel Name `Tags`
+id | name_tag | task_or_mode | id_status
+// В id_status вводим id либо task либо mode
+
+Tabel Name `Modes`
+id | name_mode | tags -> Tags
+
+Tabel Name `Users`
+id | telegram_id | usernames -> Usernames | mode -> Modes | status
+
+Tabel Name `Usernames`
+id | telegram_id | usernames

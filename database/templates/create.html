@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/static/css/update.css">
+    <link rel="stylesheet" href="/static/css/header.css">
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo">
+          <h2>
+            Админ панель
+          </h2>
+      </div>
+      <div class="menu">
+          <div>
+              <a href="/tasks" class="link">
+                  <span class="item">
+                      Задачи
+                  </span>
+              </a>
+              <a href="/modes" class="link">
+                  <span class="item">
+                      Режимы
+                  </span>
+              </a>
+          </div>
+      </div>
+  </header>  
+    <div class="divide">
+      {% if status == "task" %}
+        <ul class="tasks">
+          <!-- Для каждой задачи в списке -->
+          <li>
+            <form method="post">
+              <h2><div style="margin-bottom: 20px;">Задание #{{length+1}}</div></h2>
+              <p><textarea name="description" placeholder="Текст"></textarea></p>
+              <p><input type="text" name="tags" placeholder="Теги (Тег1, Тег2)"></p>
+              <button class="create-btn" style="margin-top: 60px;" type="submit">Создать</button>
+            </form>
+          </li>
+        </ul>
+      {% else %}
+        <ul class="modes">
+          <!-- Для каждого режима в списке -->
+          <li>
+            <form method="post">
+              <h2><input type="text" name="title" placeholder="Режим"></h2>
+              <p><input type="text" name="tags" placeholder="Теги (Тег1, Тег2)"></p>
+              <button class="create-btn" style="margin-top: 60px;" type="submit">Создать</button>
+            </form>
+          </li>
+        </ul>
+      {% endif %}
+    </div>
+  </body>
+</html>
